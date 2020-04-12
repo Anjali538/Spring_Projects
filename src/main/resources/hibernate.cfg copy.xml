@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- Update this file as per you database -->
+<hibernate-configuration>
+ 
+   <session-factory> 
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Employee</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.connection.pool_size">1</property>
+    <property name="show_sql">true</property>
+	<!--Dialect means :  What kind of language hibernate will use to talk to database, of course 
+		its SQL, but many dbs use SQL with small changes -->
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.default_schema">Employee</property>
+    <!-- Mapping files -->
+    <!-- <mapping resource="Employee.hbm.xml" /> -->
+    <mapping class= "com.spring.model.Vehicle"/>
+    
+   
+  </session-factory>
+ 
+ </hibernate-configuration>
